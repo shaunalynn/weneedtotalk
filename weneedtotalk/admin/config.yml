@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/notes"
+public_folder: "images/notes"
+
+collections:
+  - name: "notes"
+    label: "Notes"
+    folder: "_notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "e.g. Dear Mercury..." }
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - "Neighbors"
+          - "Roommates"
+          - "Co-workers"
+          - "Parents"
+          - "Drivers"
+          - "Miscellaneous"
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Date", name: "date", widget: "datetime", default: "" }
